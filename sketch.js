@@ -22,6 +22,8 @@ function preload(){
     animateImg2 = loadImage("images/thunderbolt/2.png");
     animateImg3 = loadImage("images/thunderbolt/3.png");
     animateImg4 = loadImage("images/thunderbolt/4.png");
+    
+    thunderAsset = loadSound("thunder.mp3");
 }
 
 function setup(){
@@ -68,6 +70,8 @@ function draw(){
 function thunderBolt(){
     if(frameCount % 70 === 0){
         thunder = createSprite(Math.floor(random(100,300)),0,2,2);
+        thunderAsset.play();
+        thunderAsset.setVolume(0.3);
 
         rand = Math.floor(random(1,4));
     
